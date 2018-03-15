@@ -1,0 +1,23 @@
+﻿                    
+					git 操作命令
+
+git status命令可以让我们时刻掌握仓库当前的状态
+
+git diff顾名思义就是查看difference
+
+git add把文件添加到仓库：
+
+git commit把文件提交到仓库
+
+git commit-m后面输入的是本次提交的说明
+
+git log可以查看提交历史，以便确定要回退到哪个版本
+
+HEAD指向的版本就是当前版本，使用命令git reset --hard commit_id。
+
+git reflog查看命令历史
+
+git push -u origin master   关联后,第一次推送master分支的所有内容命令
+
+git push origin master   每次本地提交后，就可以使用命令
+
