@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="css/amazeui.flat.min.css" />
     <link rel="stylesheet" href="css/Unit_apply.css">
     <link rel="stylesheet" href="css/Unit_pub.css">
+    <script type="text/javascript">
+  
+	 var myName="<%=session.getAttribute("username")%>"; 
+  </script>
 </head>
 <body>
 <div class="am-container" style="margin-top: 80px">

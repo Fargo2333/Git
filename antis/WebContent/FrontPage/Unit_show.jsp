@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="css/Unit_show.css">
     <link rel="stylesheet" href="css/Unit_pub.css">
     <link rel="stylesheet" href="css/page_style.css">
+      <script type="text/javascript">
+  
+	 var myName="<%=session.getAttribute("username")%>"; 
+  </script>
 </head>
 <body>
 <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default tabs_top">

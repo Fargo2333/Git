@@ -41,6 +41,9 @@ public class LoginInterceptor implements HandlerInterceptor{
   if(url.indexOf("register.action" )>=0){ 
 	   return true; 
 	  } 
+  if(url.indexOf("font.action" )>=0){ 
+	   return true; 
+	  } 
   //获取Session 
   HttpSession session = request.getSession(); 
   String username = (String)session.getAttribute("username"); 

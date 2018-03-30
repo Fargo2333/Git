@@ -78,6 +78,7 @@ public class PersonsController {
 		// 注销
 		@RequestMapping(value = "/user_cancellation.action")
 		public String helper_cancellation(HttpSession session) throws Exception {
+			session.removeAttribute("username");
 			session.invalidate();
 			return "/login";
 		}
@@ -118,11 +119,12 @@ public class PersonsController {
 			}
 			
 			// 前台注销
-			@RequestMapping(value = "/user_cancellation2.action")
-			public String helper_cancellation2(HttpSession session) throws Exception {
-				session.invalidate();
-				return "/FrontPage/login";
-			}
+		@RequestMapping(value = "/user_cancellation2.action")
+		public String helper_cancellation2(HttpSession session) throws Exception {
+			session.removeAttribute("username");
+			session.invalidate();
+			return "/FrontPage/login";
+		}
 		@RequestMapping(value = "/personlist.action")
 		public String personlist(ModelMap model, HttpServletRequest request,
 				HttpServletResponse response) throws Exception {

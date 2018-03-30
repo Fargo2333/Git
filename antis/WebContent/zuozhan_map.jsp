@@ -9,12 +9,12 @@
 <%session.setAttribute("xtgl","");%>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet">
-<link href="<%=basePath%>css/datepicker3.css" rel="stylesheet">
-<link href="<%=basePath%>css/styles.css" rel="stylesheet">
-<script src="<%=basePath%>js/jquery-1.11.1.min.js"></script>
-<script src="<%=basePath%>js/bootstrap.min.js"></script>
-<script src="<%=basePath%>js/bootstrap-datepicker.js"></script>
+<link href="/antis/css/bootstrap.min.css" rel="stylesheet">
+<link href="/antis/css/datepicker3.css" rel="stylesheet">
+<link href="/antis/css/styles.css" rel="stylesheet">
+<script src="/antis/js/jquery-1.11.1.min.js"></script>
+<script src="/antis/js/bootstrap.min.js"></script>
+<script src="/antis/js/bootstrap-datepicker.js"></script>
 <%-- <link href="<%=basePath%>css/indexbootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="<%=basePath%>css/indexstyle.css" rel="stylesheet" type="text/css" media="all" /> --%>
 <style>
@@ -110,8 +110,8 @@
 	
 </body>
 <!-- Echart -->
-<script type="text/javascript" src="<%=basePath%>js/echart/echarts.min.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/echart/chalk.js"></script>
+<script type="text/javascript" src="/antis/js/echart/echarts.min.js"></script>
+<script type="text/javascript" src="/antis/js/echart/chalk.js"></script>
 <script type="text/javascript">
 var pkszb=document.getElementById("pkszb");
 var pkszb_bt = echarts.init(pkszb,'macarons');

@@ -1,11 +1,12 @@
 $(function() {
+
 	naver_add();
 })
 
 // nav 附加
 var naver_add = function() {
-	$('body')
-			.prepend(
+	var js ="";
+	js=js+
 					"<header class='am-topbar am-topbar-fixed-top'>"
 							+ "<div class='am-container'>"
 							+
@@ -23,7 +24,7 @@ var naver_add = function() {
 							"<div class='am-collapse am-topbar-collapse' id='collapse-head'>"
 							+ "<ul class='am-nav am-nav-pills am-topbar-nav' id='nav_computer'>"
 							+ "<li id='index'>"
-							+ "<a href='index.jsp'>首页</a > "
+							+ "<a href='/antis/FrontPage/index.jsp'>首页</a > "
 							+ "</li>"
 							+ "<li id='nav_help' class='am-dropdown dropdown_up'>"
 							+ "<a class='am-dropdown-toggle' href='javascript:;'>爱心帮扶乐园"
@@ -31,18 +32,18 @@ var naver_add = function() {
 							+ "</a>"
 							+ "<ul class='am-dropdown-content'>"
 							+ "<li id='Unit_active'>"
-							+ "<a href='Unit_park.jsp?active=Unit_active'>1. 帮扶行动</a>"
+							+ "<a href='/antis/fpxm/xmsqfont.action'>1. 帮扶行动</a>"
 							+ "</li>"
 							+ "<li id='Unit_grants'>"
-							+ "<a href='Unit_park.jsp?active=Unit_grants'>2. 扶贫助学</a>"
+							+ "<a href='/antis/FrontPage/Unit_park.jsp?active=Unit_grants'>2. 扶贫助学</a>"
 							+ "</li>"
 							+ "</ul>"
 							+ "</li>"
 							+ "<li id='Unit_about'>"
-							+ "<a href='Unit_about.jsp?active=Unit_about'>帮扶动态</a>"
+							+ "<a href='/antis/FrontPage/Unit_about.jsp?active=Unit_about'>帮扶动态</a>"
 							+ "</li>"
 							+ "<li id='Unit_show'>"
-							+ "<a href='Unit_show.jsp?active=Unit_show'>帮扶效果展示</a>"
+							+ "<a href='/antis/FrontPage/Unit_show.jsp?active=Unit_show'>帮扶效果展示</a>"
 							+ "</li>"
 							+ "<li id='nav_study' class='am-dropdown dropdown_up'>"
 							+ "<a class='am-dropdown-toggle' href='javascript:;'>困难学生绿色通道"
@@ -50,37 +51,81 @@ var naver_add = function() {
 							+ "</a>"
 							+ "<ul class='am-dropdown-content'>"
 							+ "<li id='Unit_apply'>"
-							+ "<a href='Unit_apply.jsp?active=nav_study'>1. 困难学生申请与认定</a>"
+							+ "<a href='/antis/FrontPage/index-pkhsq.jsp?active=index-pkhsq'>1. 困难学生申请与认定</a>"
 							+ "</li>"
 							+ "<li id='Unit_post'>"
-							+ "<a href='Unit_post.jsp?type=life&active=nav_study'>2. 生活困难求助</a>"
+							+ "<a href='/antis/mb/xxllfont.action?active=Unit_post&type=life'>2. 生活困难求助</a>"
 							+ "</li>"
 							+ "<li id='Unit_post'>"
-							+ "<a href='Unit_post.jsp?type=psy&active=nav_study'>3. 心理困难求助</a>"
+							+ "<a href='/antis/mb/xxllfont.action?active=Unit_post&type=psy'>3. 心理困难求助</a>"
 							+ "</li>"
 							+ "<li id='Unit_post'>"
-							+ "<a href='Unit_post.jsp?type=learn&active=nav_study'>4. 学业困难求助</a>"
+							+ "<a href='/antis/mb/xxllfont.action?active=Unit_post&type=learn'>4. 学业困难求助</a>"
 							+ "</li>"
 							+ "<li id='Unit_post'>"
-							+ "<a href='Unit_post.jsp?type=work&active=nav_study'>5. 就业困难求助</a>"
+							+ "<a href='/antis/mb/xxllfont.action?active=Unit_post&type=work'>5. 就业困难求助</a>"
 							+ "</li>"
 							+ "</ul>"
 							+ "</li>"
-							+ "</ul>"
-							+ "<div class=' am-topbar-right '>"
-							+ "<button class='am-btn am-btn-secondary am-topbar-btn am-btn-sm' onclick=location.href='register.jsp'  >"
-							+ "<span class='am-icon-pencil'></span>注册</button>"
-							+ "<button class='am-btn am-btn-default am-topbar-btn am-btn-sm display_none'>"
-							+ "<span class='am-icon-mail-reply'></span>退出登录</button>"
-							+ "</div>"
-							+
-
-							"<div class='am-topbar-right '>"
-							+ "<button class='am-btn am-topbar-btn am-btn-sm am-btn-success' onclick=location.href='login.jsp'>"
-							+ "<span class='am-icon-user '></span>登录      </button>"
-							+ "<button id='user_name' class='am-btn am-topbar-btn am-btn-sm am-btn-success display_none'>"
-							+ "<span class='am-icon-user'></span>您好，admin</button>"
-							+ "</div>" + "</div>" + "</header>")
+							+ "</ul>";
+	debugger
+	if(undefined==myName){
+		js =js
+		+ "<div class=' am-topbar-right '>"
+		+ "<button class='am-btn am-btn-secondary am-topbar-btn am-btn-sm' onclick=location.href='/antis/register.jsp'  >"
+		+ "<span class='am-icon-pencil'></span>注册</button>"
+		+ "<a class='am-btn am-btn-default am-topbar-btn am-btn-sm display_none' href='/antis/persons/user_cancellation2.action'>"
+		+ "<span class='am-icon-mail-reply'></span> 退出登录</a>"
+		+ "</div>"
+		+
+		"<div class='am-topbar-right '>"
+		+ "<button class='am-btn am-topbar-btn am-btn-sm am-btn-success' onclick=location.href='login.jsp'>"
+		+ "<span class='am-icon-user '></span>登录      </button>"
+		+ "<button id='user_name' class='am-btn am-topbar-btn am-btn-sm am-btn-success display_none'>"
+		+ "<span class='am-icon-user'></span>您好，"+myName+"</button>"
+		+ "</div>" + "</div>" + "</header>";
+	}else if("null"==myName){
+		
+			js =js
+			+ "<div class=' am-topbar-right '>"
+			+ "<button class='am-btn am-btn-secondary am-topbar-btn am-btn-sm' onclick=location.href='/antis/FrontPage/register.jsp'  >"
+			+ "<span class='am-icon-pencil'></span>注册</button>"
+			+ "<a class='am-btn am-btn-default am-topbar-btn am-btn-sm display_none' href='/antis/persons/user_cancellation2.action'>"
+			+ "<span class='am-icon-mail-reply'></span> 退出登录</a>"
+			+ "</div>"
+			+
+			"<div class='am-topbar-right '>"
+			+ "<button class='am-btn am-topbar-btn am-btn-sm am-btn-success' onclick=location.href='/antis/FrontPage/login.jsp'>"
+			+ "<span class='am-icon-user '></span>登录      </button>"
+			+ "<button id='user_name' class='am-btn am-topbar-btn am-btn-sm am-btn-success display_none'>"
+			+ "<span class='am-icon-user'></span>您好，"+myName+"</button>"
+			+ "</div>" + "</div>" + "</header>";
+		
+	}
+	
+	else{
+		
+		js =js
+		+ "<div class=' am-topbar-right '>"
+		+ "<button class='am-btn am-btn-secondary display_none am-topbar-btn am-btn-sm' onclick=location.href='/antis/frontPage/register.jsp'  >"
+		+ "<span class='am-icon-pencil'></span>注册</button>"
+		+ "<a class='am-btn am-btn-default am-topbar-btn am-btn-sm ' href='/antis/persons/user_cancellation2.action'>"
+		+ "<span class='am-icon-mail-reply'></span>退出登录</a>"
+		+ "</div>"
+		+
+		"<div class='am-topbar-right '>"
+		+ "<button class='am-btn am-topbar-btn display_none am-btn-sm am-btn-success' onclick=location.href='/antis/frontPage/login.jsp'>"
+		+ "<span class='am-icon-user '></span>登录      </button>"
+		+ "<button id='user_name' class='am-btn am-topbar-btn am-btn-sm am-btn-success '>"
+		+ "<span class='am-icon-user'></span>您好，"+myName+"</button>"
+		+ "</div>" + "</div>" + "</header>";
+		
+	}
+		
+							
+							
+	$('body')
+	.prepend(js)
 
 	footer_add();
 }
@@ -111,7 +156,10 @@ var footer_add = function() {
 // 设置激活菜单项目
 var active = GetParameter("active");
 var active_set = function() {
+	debugger
 	if (active == null) {
+		
+		
 		$("#index").addClass("am-active");
 		return false;
 	}

@@ -1,13 +1,22 @@
 package com.itheima.ssm.po;
 
+import java.util.List;
+
 public class Mb {
     private Integer mid;
 
     private String mbt;
 
     private String mnr;
+    public List<Message> list;
 
-    public Mb(){
+    public List<Message> getList() {
+		return list;
+	}
+	public void setList(List<Message> list) {
+		this.list = list;
+	}
+	public Mb(){
     	
     }
     public Mb(Integer mid, String mbt, String mnr) {

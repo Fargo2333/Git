@@ -162,4 +162,33 @@ public String xmwc2(Integer id,Fpxm Fpxm,Model model){
 	this.FpxmService.updatefpxmjxz(Fpxm);
 	return "redirect:/fpxm/xmwc.action";
 }
+
+@RequestMapping("/xmsqfont")
+public String xmsqfont(ModelMap model, HttpServletRequest request,
+		HttpServletResponse response) throws Exception {
+	String pageNow = request.getParameter("pageNow");
+	Page page = null;
+	List<Fpxm> FpxmList = null;
+	int totalCount = (int) FpxmService.getAllFpxmCount();
+	if (pageNow != null) {
+		page = new Page(totalCount, Integer.parseInt(pageNow));
+		FpxmList = FpxmService.getFpxmList(page);
+	} else {
+		page = new Page(totalCount, 1);
+		FpxmList = FpxmService.getFpxmList(page);
+		// users = userMapper.getAllUser();
+	}
+	model.addAttribute("page", page);
+	model.addAttribute("FpxmList", FpxmList);
+	model.addAttribute("active", "Unit_active");
+	return "/FrontPage/Unit_park";
+}
+@RequestMapping(value="/editfpxmfont")
+public String editfpxmfont(Model model, Integer id,HttpServletRequest request){
+	 request.setAttribute("fpx", FpxmService.findfpxmById(id));  
+     model.addAttribute("fpx", FpxmService.findfpxmById(id));   
+     model.addAttribute("id",id);
+	return "/FrontPage/Unit_article";
+}
+
 }

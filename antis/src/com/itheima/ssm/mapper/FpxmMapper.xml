@@ -9,6 +9,7 @@
     <result column="xzrdw" property="xzrdw" jdbcType="VARCHAR" />
     <result column="xtzze" property="xtzze" jdbcType="INTEGER" />
     <result column="xzt" property="xzt" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
     <result column="xvillagename" property="xvillagename" jdbcType="VARCHAR" />
     <result column="pszz" property="pszz" jdbcType="VARCHAR" />
     <result column="vid" property="vid" jdbcType="INTEGER" />

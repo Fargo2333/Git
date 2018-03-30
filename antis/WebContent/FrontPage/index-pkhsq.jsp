@@ -34,6 +34,11 @@ function pkhsq(){
 	document.pkhsqform.action="${pageContext.request.contextPath}/jcxx/insertfrontpkh.action";
 	document.pkhsqform.submit();
 }
+
+</script>
+<script type="text/javascript">
+
+var myName="<%=session.getAttribute("username")%>"; 
 </script>
 <!--[if (gte IE 9)|!(IE)]><!-->
 <script src="${pageContext.request.contextPath}/FrontPage/js/jquery.min.js"></script>
@@ -42,7 +47,7 @@ function pkhsq(){
 <body>
 
     
-    <body class="templatemo-bg-gray">
+
 
 
 <br>

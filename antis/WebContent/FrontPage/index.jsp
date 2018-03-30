@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,11 +10,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="renderer" content="webkit">
   <title>首页</title>
-  <link rel="stylesheet" href="css/amazeui.flat.min.css" />
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/Unit_pub.css">
-  <link rel="stylesheet" href="css/amazeui.swiper.min.css" />
+  <link rel="stylesheet" href="/antis/FrontPage/css/amazeui.flat.min.css" />
+  <link rel="stylesheet" href="/antis/FrontPage/css/index.css">
+  <link rel="stylesheet" href="/antis/FrontPage/css/Unit_pub.css">
+  <link rel="stylesheet" href="/antis/FrontPage/css/amazeui.swiper.min.css" />
+  <script type="text/javascript">
+  
+	 var myName="<%=session.getAttribute("username")%>"; 
+  </script>
 </head>
+
 
 <body>
 <div class="get">
@@ -165,9 +172,9 @@
   <!--[if (gte IE 9)|!(IE)]><!-->
   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
   <!--<![endif]-->
-  <script src="js/amazeui.min.js"></script>
-  <script src="js/amazeui.swiper.min.js"></script>
-  <script src="js/Unit_pub.js"></script>
-  <script src="js/index.js"></script>
+  <script src="/antis/FrontPage/js/amazeui.min.js"></script>
+  <script src="/antis/FrontPage/js/amazeui.swiper.min.js"></script>
+  <script src="/antis/FrontPage/js/Unit_pub.js"></script>
+  <script src="/antis/FrontPage/js/index.js"></script>
 </body>
 </html>
