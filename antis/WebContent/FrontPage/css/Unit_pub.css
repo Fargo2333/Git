@@ -1,0 +1,45 @@
+.margin-l-1 {
+	margin-left: 1%;
+}
+
+.am-topbar {
+	background: #f1f1f1;
+}
+
+.footer {
+	background: #f4f4f4;
+	border-top: 1px solid #e1e1e1;
+	margin-top: 60px;
+	padding: 25px 0;
+}
+
+.nav_logo {
+	width: 140px;
+	height: 55px;
+}
+
+.footer_title {
+	border-bottom: 1px solid #e1e1e1;
+	padding-bottom: 20px;
+}
+
+.footer_content {
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e1e1e1;
+	padding: 0;
+}
+
+.footer_content h3 {
+	color: #222222;
+	font-family: "微软雅黑", "黑体";
+	font-size: 14px;
+	font-weight: normal;
+	height: 20px;
+	line-height: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.display_none {
+	display: none;
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itheima.ssm.mapper.PersonsMapper" >
+  <resultMap id="BaseResultMap" type="com.itheima.ssm.po.Persons" >
+    <id column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="userpassword" property="userpassword" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="userschedule" property="userschedule" jdbcType="VARCHAR" />
+  </resultMap>
+ 	<select id="queryPersionbyid" parameterType="int" resultType="Persons">
+		SELECT userid,username,userpassword,email,userschedule FROM persons
+		WHERE userid=#{userid}
+	</select>
+	 <select id="queryPersionbyname" parameterType="string" resultType="Persons">
+            SELECT userid,username,userpassword,email,userschedule FROM persons
+            where username = #{username}
+    </select>
+    
+    <insert id="addpersons" parameterType="map">
+		INSERT INTO persons
+		(username,userpassword) VALUES(#{username},#{userpassword})
+	</insert>
+	<insert id="addfrontpersons" parameterType="map">
+		INSERT INTO persons
+		(username,userpassword,userschedule) VALUES(#{username},#{userpassword},#{userschedule})
+	</insert>
+	<select id="findpersonlist" parameterType="com.itheima.ssm.po.Persons" resultType="com.itheima.ssm.po.Persons">
+	select * from persons limit #{startPos},
+		#{pageSize};
+	</select>
+    <select id="getpersonlistCount" resultType="long">
+		SELECT COUNT(*) FROM
+		persons;
+	</select>
+	<select id="findpersonsbyId" parameterType="int" resultType="com.itheima.ssm.po.Persons">
+	select * from persons where userid=#{userid}
+	</select>
+	<update id="updateperson" parameterType="com.itheima.ssm.po.Persons">
+	update persons set userpassword=#{userpassword},email=#{email},userschedule=#{userschedule} where userid=#{userid}  
+	</update>
+	<delete id="deleteperson" parameterType="integer">
+	delete from persons where userid=#{userid} 
+	</delete>
+	<insert id="insertperson" parameterType="com.itheima.ssm.po.Persons">
+	insert into persons (username,userpassword,email,userschedule) values(#{username},#{userpassword},#{email},#{userschedule})
+	</insert>
+</mapper>

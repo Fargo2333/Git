@@ -1,0 +1,10 @@
+.idfycode{
+    display: block;
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+textarea{
+    resize:none;
+    width: 100%;
+}   

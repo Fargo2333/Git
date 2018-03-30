@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itheima.ssm.mapper.guanliTongjiMapper">
+
+	<select id="query_zhu" resultType="guanliTongji_zhu">
+		SELECT vname,vpkhrk FROM
+		village
+	</select>
+
+	<select id="query_leida" resultType="guanliTongji_lei">
+		SELECT
+		pzyzpyy,COUNT(pzyzpyy) AS
+		pnumber FROM pkh GROUP BY pzyzpyy
+	</select>
+
+	<select id="query_bing" resultType="guanliTongji_bing">
+		SELECT
+		SUM(vpkhrk)/SUM(vnumber) AS
+		bfb,vname FROM village GROUP BY vname
+	</select>
+
+	<select id="query_zhexian" resultType="guanliTongji_zhexian">
+		SELECT
+		SUM(pgold)/COUNT(pgold) AS
+		pgolds,pvillagename FROM pkh GROUP BY
+		pvillagename
+	</select>
+
+	<select id="query_zhexian2" resultType="guanliTongji_zhexian2">
+		SELECT COUNT(pkh.phzxm)
+		AS phzxm_num ,pvillagename,pfpcs FROM pkh GROUP BY pfpcs,pvillagename
+	</select>
+	
+	<select id="query_zhu2" resultType="guanliTongji_zhu2">
+		SELECT txm,tsjbfhs,tsjzfhs,tsjpxcs,tsjfpxm FROM
+		bftj where tshzt='已通过'
+	</select>
+	<select id="query_zhu3" resultType="guanliTongji_zhu3">
+		SELECT pxm,pgold,pngold FROM
+		pkh where pshzt='已通过'
+	</select>
+	<select id="query_zhu4" resultType="guanliTongji_zhu4">
+		SELECT txm,tjhbfhs,tjhzfhs,tjhpxcs,tjhfpxm FROM
+		bftj where tshzt='已通过'
+	</select>
+	<select id="query_pkhbing" resultType="Pkhbing">
+        SELECT pzyzpyy,COUNT(pzyzpyy) AS zpyynumber FROM pkh GROUP BY pzyzpyy
+    </select>
+</mapper>
